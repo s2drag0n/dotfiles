@@ -17,6 +17,8 @@ local config = {
 		top = 20,
 		bottom = 5,
 	},
+
+	keys = {},
 }
 
 return config

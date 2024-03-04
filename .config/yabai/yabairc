@@ -33,10 +33,10 @@ yabai -m config                                 \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  12             \
-    bottom_padding               12             \
-    left_padding                 12             \
-    right_padding                12             \
+    top_padding                  8             \
+    bottom_padding               8             \
+    left_padding                 8             \
+    right_padding                8             \
     window_gap                   06             \
     layout                       bsp            \
     mouse_modifier               fn             \
@@ -46,16 +46,13 @@ yabai -m config                                 \
 
 # ================================ 规则 ================================
 # 打开系统偏好设置，不使用平铺模式
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabai -m rule --add app="^系统偏好设置$" manage=off
-yabai -m rule --add app="^提醒事项$" manage=off
-yabai -m rule --add app="^关于本机$" manage=off
-# yabai -m rule --add app="^微信$" manage=on
-# yabai -m rule --add app="^WeChat$" manage=on
-yabai -m rule --add app="^音乐$" manage=off
-yabai -m rule --add app="^music$" manage=off
+yabai -m rule --add app="^(访达|Finder)" sticky=on layer=above manage=off
+yabai -m rule --add app="^(系统设置|System Settings)" manage=off layer=normal
+yabai -m rule --add app="^(音乐|Music)" manage=off layer=normal
+yabai -m rule --add app="^提醒事项$" manage=off layer=normal
+yabai -m rule --add app="^备忘录$" manage=off layer=normal
+yabai -m rule --add app="^关于本机$" manage=off layer=normal
+yabai -m rule --add app="^(微信|Wechat)$" manage=off layer=normal
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
 
 echo "yabai configuration loaded.."

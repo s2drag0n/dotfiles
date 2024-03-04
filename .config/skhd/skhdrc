@@ -87,7 +87,6 @@ alt - k : yabai -m window --focus north
 # swap managed window
 shift + alt - h : yabai -m window --swap west
 shift + alt - l : yabai -m window --swap east
-
 # move managed window
 shift + cmd - l : yabai -m window --warp east
 shift + cmd - h : yabai -m window --warp west
