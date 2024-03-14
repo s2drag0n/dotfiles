@@ -41,7 +41,7 @@ yabai -m config normal_window_opacity 0.7
 # yabai -m config menubar_opacity 0.0
 # 将自定义栏与 yabai 提供的填充功能off集成？
 yabai -m config external_bar main:10:0
-yabai -m config external_bar all:43:5
+yabai -m config external_bar all:38:5
 
 # 和sketchbar联动
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
@@ -54,3 +54,5 @@ yabai -m rule --add app="^(Wechat|微信)$" manage=off
 yabai -m rule --add app="^(活动监视器)$" manage=off
 yabai -m rule --add app="^(Quantumult X)$" manage=off
 
+# 启动边框
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
