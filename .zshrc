@@ -118,13 +118,17 @@ export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
-# # make directory and file different
-# #enables colorin the terminal bash shell export
-# CLICOLOR=1
-# #sets up thecolor scheme for list export
-# LSCOLORS=gxfxcxdxbxegedabagacad
-# #enables colorfor iTerm
-# export TERM=xterm-color
-
 alias v='nvim'
-export OPENAI_APIP_KEY=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
+alias n='neofetch'
+
+export YAZI_CONFIG_HOME=~/.config/yazi/
+
+# yazi使用ya进入，并提供退出yazi时切换工作目录的能力
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
